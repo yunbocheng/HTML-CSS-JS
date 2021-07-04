@@ -1,0 +1,45 @@
+#div1 {
+	width: 100px;
+	height: 100px;
+	background: #ADFF2F;
+	border: 1px solid black;
+	
+	/* 设置绝对定位 */
+	/* 绝对定位的时候只要设置X轴和Y轴的坐标即可 */
+	
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	
+}
+
+#div2 {
+	width: 100px;
+	height: 100px;
+	background: #000000;
+	border: 1px solid black;
+	
+	/* 设置绝对定位 */
+	/* 绝对定位的时候只要设置X轴和Y轴的坐标即可 */
+	
+	position: absolute;
+	top: 120px;
+	left: 150px;
+}
+
+/*标签选择器*/
+input{
+	border: solid 1px red;
+}
+
+/*累选择器*/
+
+.myinput{
+	border: solid 2px blue;
+}
+
+/*
+	最终显示的为蓝色，说明class选择器的优先级高于标签选择器
+	三种选择器的优先级：
+		id选择器 > 类选择器 > 标签选择器
+*/

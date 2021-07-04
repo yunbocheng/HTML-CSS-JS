@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>hidden控件(隐藏域)</title>
+	</head>
+	<body>
+		<!-- hidden隐藏域控件 -->
+		<form action="http://127.0.0.:8080/crm/save" >
+			
+			
+			<!-- 隐藏域 -->
+			<!-- 在页面上不显示，但是最终提交的时候会提交给服务器 -->
+			<!-- 不希望用户在浏览器上看到，但是希望可以将这个数据提交给服务器 -->
+			
+			<input type="hidden" name="username"  value="1111"/>
+			
+			<!-- 提交按钮 -->
+			<input type="submit" value="提交" />
+			
+			<!-- 
+				提交的结果：
+				http://127.0.0.0:8080/crm/save?
+				username=1111
+			-->
+		</form>
+	</body>
+</html>

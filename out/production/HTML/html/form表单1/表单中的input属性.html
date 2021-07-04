@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单form</title>
+	</head>
+	<body>
+		
+		<!-- http://localhost:8080/oa/login  这是什么？
+			不必关心这个，你只要关心他是一个URL即可。
+			和 http://www.baidu.com没有区别
+			
+		-->
+		
+		<form action="，" method=”get>
+			
+			<!-- 
+			
+				input标签是form表单中非常重要的输入域控件，所有的输入域控件
+				都是用来收集用户的数据。用户实际上就是向输入域控件中输入数据的
+				
+				input标签中最常用的是type属性，type属性用来设置输入域。
+				控制展示的样式。他有哪些值可选？
+					
+					text 文本框架
+					password 密码框
+					radio 单选按钮
+					checkbox 复选框
+					...
+					
+			 -->
+	
+			<h2>user login</h2>
+			<hr>
+			<!-- 文本框 -->
+			<!-- 对于文本框来说，是有value属性的，但是不需要程序员指定，因为用户会填写，用户填写的就是value-->
+			
+			username:&nbsp;&nbsp;<input type="text" name="yonghuming" />
+			<br>
+			<!-- 密码框 -->
+			password:&nbsp;&nbsp;<input type="password" name="mima"/>
+			<br>
+			<!-- 提交按钮 -->
+			<!-- 提交按钮只是为了起到提交的作用，按钮上的数据是不需要提交的-->
+			<!-- 不需要提交的数据你千万别写name属性。否则也会进行提交 -->
+			<!-- 
+			
+			<input type="submit" name="hehe" value="login"  />
+			 这样写会导致 "hehe=login"提交。
+			 -->
+			<input type="submit" value="login"  />
+		</form>
+	</body>
+</html>
+
+<!-- 
+	以上表单提交的时候，数据格式是怎样的？
+		http://localhost:8080/oa/login?yonghuming=jack&mima=111
+	
+	重点强调1 ：
+		当一个表单提交数据的时候，输入域控件必须有name属性，没有name属性，这个数据是不会提交的。
+		
+	重点强调2 ：
+		任何一个浏览器都是采用以上的格式进行提交。
+		这个提交表单数据的格式是谁定制的？W3C（世界万维网联盟组织。）
+	
+	W3C制定的这个提交的格式是怎么样的
+		name=value&name=value&name=value&name=value...
+		
+ -->

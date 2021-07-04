@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>类的定义和创建对象和调用方式</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				1. 在JS中怎么定义一个类？包括两中国方式：
+					第一种方式：
+						function 类名(形式参数列表){
+							
+							this.属性名 = 参数;
+							this.属性名 = 参数;
+							
+							this.方法名 = function(){
+								
+							}
+							
+						}
+						
+					第二种方式：
+						类名 = function(形式参数列表){
+							
+							this.属性名 = 参数;
+							this.属性名 = 参数;
+							
+							this.方法名 = function(){
+								
+							}
+							
+						}
+			 */
+			
+			// 既是一个函数，同时又是一个类的定义，函数名是：sayHello，类名是:sayHello
+			function sayHello(){
+				
+			}
+			
+			sayHello = function(){
+				
+			}
+			
+			/* 
+				关键是看怎么调用，
+					如果没有使用new运算符调用，表示普通调用，不会在堆中new对象。
+					
+					如果使用new运算符，显然是把他当做一个类来看待，
+					这个会导致浏览器在堆中开辟一个新对象。
+			
+			*/
+			
+			// 这个一个普通函数调用
+			sayHello();
+			
+			// 这是使用sayHello()类创建一个对象
+			// obj是一个引用，保存内存地址指向对象.
+			var obj1 = new sayHello();
+			var obj2 = new sayHello(); 
+			
+		</script>
+		
+		<hr >
+		<script type="text/javascript">
+				/* 
+					正式定义一个员工类
+				 */
+				
+				/* 
+				第一种定义类的方式：
+					function Emp(x,y,z){
+					
+					// 属性
+					this.empno = x;
+					this.ename = y;
+					this.sal = z;
+					
+					// 方法
+					this.work = function(){
+						console.log(this.ename + "is working!!");
+					}
+				}
+			 */
+			
+			/* 第二种定义类的方式： */
+			Emp = function(x,y,z){
+				
+				// 属性
+				this.empno = x;
+				this.ename = y;
+				this.sal = z;
+				
+				// 方法
+				this.work = function(){
+					console.log(this.ename + "is working!!");
+				}
+			}
+			// 创建对象
+			var e = new Emp();
+			e.work();  // undefinedis working!!
+			
+			var e1 = new Emp(111);
+			e1.work(); // undefinedis working!!
+			
+			var e2 = new Emp(222,"KING");
+			e2.work(); // KINGis working!!
+			
+			var e3 = new Emp(333,"SMITH",800);
+			e3.work(); // SMITHis working!!
+			
+			// 访问一个对象的属性
+			// 这个和java相同
+			console.log("empno = " + e3.empno);  // empno = 333
+			console.log("ename = " + e3.ename);  // ename = SMITH
+			console.log("sal = " + e3.sal);		// sal = 800
+			
+			
+			// 访问一个对象的属性另一种写法，语法格式：引用["属性名"]
+			console.log("empno = " + e3["empno"]);  // empno = 333
+			console.log("ename = " + e3["ename"]);  // ename = SMITH
+			console.log("sal = " + e3["sal"]);		// sal = 800
+			
+			// 给Emp动态扩展一个方法
+			// 后期动态扩展方法
+			Emp.prototype.getSal = function(){
+				return this.sal;
+				
+			}
+			
+			// 调用扩展的方法
+			console.log(e3.getSal()); // 800
+			
+		</script>
+	</body>
+</html>

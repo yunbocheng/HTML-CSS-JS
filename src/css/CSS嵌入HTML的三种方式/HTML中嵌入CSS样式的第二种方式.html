@@ -1,0 +1,113 @@
+<!--
+  ~ Copyright (c) 2021/7/3 下午1:35 @程云博 <2484720940@qq.com> All Rights Reserved
+  -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML中嵌入CSS样式的第二种方式:定义内部样式块对象</title>
+		
+		<!-- 这是HTML语言的注释 -->
+		<!-- 样式块对象 -->
+		
+		<!-- 
+		
+			重点：什么时候使用class选择器？什么时候使用id选择器？
+				如果这个样式作用于多个标签使用 class选择器
+				如果这个样式作用于一个标签使用 id选择器
+		 -->
+		<style type="text/css">
+			/* 这是CSS语言的注释 */
+			/* 设置"id=mydiv"元素的高度宽度和背景色*/
+			/* 
+			
+				设置某个元素的样式，首先你需要选中这个元素，怎么选中一个或者多个元素呢？
+					常见的选择元素的三种方式：(这里只说常见的)
+						id选择器
+						标签选择器
+						类选择器
+			 */
+			/* 关于id选择器的使用 */
+			/* id选择器只能将样式作用于页面中的某一个节点。因为id是不能重复的。 */
+			/* 这里边的mydiv就是设置id为mydiv模块样式的CSS代码块，只作用于mydiv */
+
+			/*
+			以上三种选择器的优先级：
+			id选择器 > 类选择器 > 标签选择器
+			*/
+			/* id选择器 */
+			#mydiv {
+				width: 200px;
+				height: 200px;
+				background-color: blueviolet;
+			}
+			
+			/* 标签选择器 */
+			/* 作用于当前页面中“所有”的input元素 */
+			
+			/* 标签选择器 */
+			input {
+				
+			
+			/* 	
+			这些代码是分开写样式：
+				width: 300px;
+				height: 20px;
+				border-color: red;
+				border-style: dashed;
+				border-width: 1px; */
+				
+			/* 在这里有一个border语法（总样式），可以直接设置边框宽度，边框风格，边框颜色 */
+				
+			border: 1px soild blue;
+			
+			}
+			
+			/* id选择器比标签选择器的优先级高 */
+			/* 可以看到“#email”选择器和“input”选择器同时作用 但是选择了id选择器*/
+			
+			#email {
+				width: 400px;
+				height: 30px;
+				border: 2px dashed black;
+			}
+			
+			/* 类选择器 */
+			.student {
+				width: 100px;
+				height: 30px;
+				background-color: #0000FF;
+			
+		</style>
+	</head>
+	<body>
+		<div id="mydiv">
+			
+		</div>
+		
+		<br><br><br>
+		
+		用户名<input type="text" name="username" /><br>
+		密码<input type="password" name="password" />
+		
+		<br><br><br>
+		邮箱地址：<input type="text" id="email" />
+		
+		<br><br><br>
+		<!-- 在HTML中，任何一个节点元素都有class属性，用来指定标签类名 -->
+		<!-- 以下虽然标签是不同的，但是他们都属于同一类，为什么？因为类名相同 -->	
+		<!-- 前两个为文本框，用户输入输入数据是使用 -->
+		<!-- 最后一个为盒子，用户不能输入数据 -->
+		<input class="student" type="text" /><br><br>
+		<input class="student" type="text" /><br><br>
+		<div class="student">3</div>
+		
+		
+		<!--
+			以上三种选择器的优先级：
+				id选择器 > 类选择器 > 标签选择器
+				
+		 -->
+	</body>
+</html>

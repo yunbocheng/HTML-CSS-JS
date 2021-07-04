@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS变量</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* JS中声明变量使用var */
+
+			/*
+				Java语言是一种强类型语言：
+					Java语言在定义变量的时候必须指定变量的数据类型。
+					int i = 100;
+					在Java中，变量的数据类型在编译阶段确定下来了。
+					Java中的变量i一旦声明为int类型，这一辈子只能是int类型。不能在变为其他类型。
+					
+				JavaScript是一种弱类型语言 ：
+					JavaScript不需要编译，是脚本语言，直接浏览器打开执行。
+					而且JavaScript定义变量的时候不需要指定数据类型。
+					例如 ：
+						var i;
+						var j;
+						var k;
+					并且JS中的变量可以赋值任何类型的值。
+					JS中的变量是一个万能的口袋。什么类型的数据都能放进去。
+					
+			 */
+			// JS的变量怎么定义呢？
+			// 语法格式 ：var 变量名
+			// JS的变量如何赋值呢？
+			// 变量名 = 值
+			
+			// 定义一个age变量
+			var age;
+			
+			// 变量没有赋值的时候默认值是undefined
+			// undefined是JS中的一个具体存在的值，系统的默认值。
+			// 以下的这行代码表示将数据输出到控制台上(控制台怎么调出来？F12)
+			
+			console.log(age)
+			
+			// 给age变量赋值
+			age = 20;
+			console.log("age = " + age);
+			
+			// age可以赋值一个布尔类型的数据嘛？
+			age = false;
+			console.log("age = " + age);
+			
+			age = 3.14;
+			console.log("age = " + age);
+
+
+			age = "abc";
+			console.log("age = " + age);
+			
+			age = 'text';
+			console.log("age = " + age);
+			
+			// 声明变量的同时赋值
+			var k = 20;
+			console.log("age = " + k);
+			
+			// 一行上声明多个变量
+			var x,y,z = 300;
+			console.log("x的值为 ：" + x); // x的值为：undefined
+			console.log("y的值为 ：" + y); // y的值为：undefined
+			console.log("z的值为 ：" + z); // z的值为：300
+			
+			var username = "zhangsan";
+			console.log("username = " + username); // username = zhangsan
+		</script>
+	</body>
+</html>

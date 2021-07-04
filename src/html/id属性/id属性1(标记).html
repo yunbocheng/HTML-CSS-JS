@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html id="htmlNode"> 
+	<head id="headnode">
+		<meta charset="utf-8">
+		<title>关于HTML页面中元素的id属性</title>
+	</head>
+	<body id="bodyNode">
+		
+		<!-- HTML文档是一棵树，树上有很多节点，父节点下有子节点，子节点下还有子节点。 -->
+		<!-- html文档：文档对应的英语单词是 : document吗，所以HTML文档又叫做：DOM树-->
+		<!-- javascript可以对DOM树上的节点进行增删改查操作 -->
+		
+		<!-- 每一个节点都有id属性。id是这个节点对象的唯一标识，或者说id是这个节点的身份证编号。 -->
+		<!-- 在同一个HTML文档中id具有唯一性，不可重复性。 -->
+		
+		<!--javascript语言，对以上的form表单中的元素进行增删改查操作。来达到网页的动态效果 -->、
+		<!-- 当javascript语言对某个节点进行操作的时候，需要先获取到该节点对象，怎么获取该节点对象呢？
+		     答案是：可以通过该节点对象的id来获取到该节点对象。
+			 
+		 -->
+		<form id="formnode" action="http://localhost:8080/oa/save" method="get">
+			用户名 ：<input id="username" type="text" name="username" /><br>
+			密码 ：<input id="password" type="password" name="password"/><br>
+			<input id="buttonNode" type="submit" value="登录"/>
+		</form>
+	</body>
+</html>

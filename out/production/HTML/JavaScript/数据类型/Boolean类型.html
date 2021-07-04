@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Boolean类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				Boolean类型：
+					1. Boolean类型属于原始类型。
+					2. Boolean类型只有两个值：true false， 没有其他值。
+					3. Boolean类型中只有一个函数。
+					   Boolean()函数，这个函数的作用是？
+						将不是布尔类型的数据转换为布尔类型。	
+						
+					转换的规律是什么？
+						只要有东西结果就是true
+			 */
+			
+			console.log(Boolean(1));  // true
+			console.log(Boolean(2));  // true
+			console.log(Boolean(0));  // false
+			
+			
+			console.log(Boolean("abc")); // true
+			console.log(Boolean("中国"));  // true
+			console.log(Boolean(""));  // 空字符串 false
+			
+			console.log(Boolean(NaN));  // false
+			console.log(Boolean(Infinity)); // true 
+			
+			console.log(Boolean(null));  // false
+			console.log(Boolean(new Object())); // true
+			 
+			console.log(Boolean(undefined)); // false 
+			
+		</script>
+		<img src="https://gitee.com/YunboCheng/imageBad/raw/master/image/20210704171534.png" >
+		<img src="https://gitee.com/YunboCheng/imageBad/raw/master/image/20210704171301.png" >
+	</body>
+</html>

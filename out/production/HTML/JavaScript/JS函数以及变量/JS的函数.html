@@ -1,0 +1,152 @@
+<!--
+  ~ Copyright (c) 2021/7/3 下午5:31 @程云博 <2484720940@qq.com> All Rights Reserved
+  -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS的函数</title>
+	</head>
+	<body>
+		<!-- 以下是JS代码函数的第一种定义方式 -->
+		
+		<script type="text/javascript">
+		
+		// 在函数定义的上边进行调用函数
+		// hello();
+			/* 
+				1.关于java中的方法？
+					public static int sum(int a,int b){
+						int c = a + b;
+						return c;
+					}
+					以上这是一个java中的方法。
+					这个方法是用来求和的。
+					int是返回值类型，表示这个方法执行结束之后返回一个整数。
+					sum是方法名。
+					(int a,int b) 形式参数列表
+					
+					方法怎么调用呢？
+						sum("abc","def") 这样在java中会报错的，因为Java是强类型语言。
+						方法规定是两个int类型的数据。你传递两个字符串肯定报错。
+						
+						int retValue = sum(1,2);
+						这样写不会报错，因为传递的是int的数据类型。
+						
+				2.关于JavaScript中的方法？
+					- JavaScript是一种弱类型语言。
+					- JavaScript中不叫做方法，叫做函数(function)
+					- JavaScript中怎么定义函数？
+						function 函数名(形式参数列表){
+							函数体
+						}
+					// 注意不需要写返回值数据类型,因为var变量可以接收任何类型的数据	
+					-例如 ：
+						function sum(a,b){
+							
+						}
+						函数名：sum
+						形式参数：a,b (a,b都是变量名)
+					JS的函数不需要指定返回值类型，因为可以返回任何类型的数据。
+					JS的函数形式参数列表也不需要指定数据类型，因为JS是弱类型语言。
+				
+				3. JS中的函数定义之后，必须手动调用才能执行。不调用是不会执行的。
+					
+			 */
+			
+			// 注意 ：函数的声明，是优先级最高的。不论调用函数的代码在哪个位置进行调用，都可以执行。
+			// 虽然JS代码是自上而下执行的，但是对于JS函数来说，JS函数的优先级最高。最先执行。
+			function hello(){
+				window.alert("hello word!");
+			}
+			
+			// 定义一个两数相加的函数
+			function sum(a,b){
+				// console.log("两数字的和为 ：" + (a+b))
+				// 	将消息输出到控制台。这里所说的控制台是网页使用F12调出的控制台
+				console.log(a + ":" + b)
+			}
+			// 调用函数，在函数定义的底下可以执行调用函数
+			// hello();
+			/* 
+				以下代码是重点 ：
+					以下是调用sum函数的方法
+					JS代码是非常灵活的。
+					sum():这样调sum函数用代表没有向sum函数中传递任何一个参数的值。
+							a的值为 undefined b的值为 ：undefined
+						结果显示 ： undefined:undefined
+						
+					sum(1):这样调用sum函数代表只向sum函数的形参列表中的
+						a传递一个数值1，而b的值为undefined
+					结果显示 ：1:undefined
+					
+					sum(1,2):这样调用sum函数代表向sum函数的形参列表中的
+						a传递一个数值1，b传递一个数值2。
+					结果显示 ：1:2
+					
+					sum(100,false,3):这样调用sum函数代表向sum函数的形参列表中的
+						a传递一个数值100，b传递一个布尔类型的false，而3代表什么都不是，因为只有两个形参，3属于多余。
+					结果显示 ：100:false
+					
+					
+			*/			
+
+			//这一切都是因为JS是一种弱类型语言。
+			sum();
+			sum(1);
+			sum(1,2);
+
+			// 即使传递的是三个参数，他会自动将最后一个参数删除掉，只使用前两个，且不会报错。
+			sum(100,false,3);
+
+		</script>
+		
+		<!-- 在JS代码块外部也就是HTML代码中调用JS代码中的求和函数 -->
+		<input type="button" value="hello" onclick="hello()"/>
+		
+		<!-- 在HTMl代码中调用JS函数 -->
+		<button type="button" onclick="sum(1,2)"/>求和</button>
+		
+		
+		<!-- 以下是函数的第二种定义方式 -->
+		<script type="text/javascript">
+
+			sayHello = function(username){
+
+				// 将消息输出到控制台。这里所说的控制台是网页使用F12调出的控制台
+				console.log("welcome, " + username)
+			}
+
+			/*
+            	定义函数的第二种方法解释：
+                sayHello：为该函数的函数名
+                (username)：为该函数的形式参数列表
+
+         */
+		</script>
+		
+		<!-- 调用方法，没有给参数传递形式参数 -->
+		<!-- 以下代码显示的结果 ：welcome, undefined-->
+		<!--没有传递形式参数的话，会自动将其赋值为undefined-->
+		<input type="button" value="hello" onclick="sayHello()" />
+		
+		<!-- 调用方法，给方法传递形式参数 -->
+		<!-- 以下代码显示的结果 ：welcome, lucy -->
+		<input type="button" value="hello lucy" onclick="sayHello('lucy')"/>
+
+		<!--
+			关于JS带代码的调试:
+				首选方案是：alert(),在程序的某个位置先使用alert弹出某个变量的值，看看是否是需要的。
+				通过alert可以调试JS代码。
+
+				另一种方案：
+					采用浏览器自带的调试插件，F12
+						F12这个插件中比较重要的面板：
+							控制台
+							查看器
+							网络
+							掌握以上三个即可。
+		-->
+	</body>
+</html>

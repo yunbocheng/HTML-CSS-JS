@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS的变量</title>
+	</head>
+	<body>
+		
+		<img src="https://gitee.com/YunboCheng/imageBad/raw/master/image/20210703170724.png" alt="Java代中声明变量的方式">
+		<img src="https://gitee.com/YunboCheng/imageBad/raw/master/image/20210703171312.png" alt="JS代码中声明变量的方式">
+		
+		
+		<script type="text/javascript">
+		
+			/* 
+				注意：在JS代码中分号可加可不加。
+			 */
+			
+			/* var是一个关键字，就是用来声明变量的，variables*(变量)的前三个字母 */
+			var i ;
+			alert(i) // 这个没有进行赋值，默认额赋值为undefined，在JS中undefined是一个具体的值
+			
+			var x = "undefined";
+			alert(x) // 这个和上边的那个虽然输出结果相同，但是"undefined"是一个字符串，而默认的undefined是一个值
+			
+			// 声明时，同时赋值
+			var k = 100;
+			alert(k) // 输出100
+			alert(k+1) // 输出101
+			
+			k = false;
+			alert(k) // false
+			
+			k = 3.14
+			alert(k) // 3,14
+						
+			// 一行可以声明多个变量
+			var a,b,c=300;
+			alert(a)  // undefined
+			alert(b)  // undefined
+			alert(c)  // 300
+		</script>
+	</body>
+</html>

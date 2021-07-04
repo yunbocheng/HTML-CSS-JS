@@ -1,0 +1,41 @@
+<!--
+  ~ Copyright (c) 2021/7/3 下午3:01 @程云博 <2484720940@qq.com> All Rights Reserved
+  -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鼠标悬停样式</title>
+		
+		<style type="text/css">
+		
+			/* :hover这个专门用来设置鼠标悬停时的效果的 */
+			/* 当鼠标悬停的时候，执行样式，当鼠标离开时样式取消 */
+			/* 使用hover的时候一定要注意：冒号两边不能出现空格 */
+			#mouse:hover {
+				
+				/* 设置鼠标悬停效果 */
+				/* 鼠标移动到以下文本上，希望字体颜色变成红色，鼠标变成小手 */
+				
+				color: red;
+				cursor: pointer;
+			}
+
+			/*
+				注意：hover在使用的时候，这个冒号的两边都是不允许有空格的。
+
+			*/
+			input{
+				color:purple;
+				cursor: pointer;
+				border: inset 1px red;
+			}
+
+		</style>
+	</head>
+	<body>
+		<span id="mouse">将鼠标移动到此处会发生变化</span>
+		<input type="text"/>
+	</body>
+</html>

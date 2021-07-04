@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>undefined数据类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			/* 
+				Undefined类型：
+					1. 只有一个数值，他的值就是：undefined
+					2. 当一个变量声明没有手动赋值的时候，系统会默认赋值为undefined
+					3. Undefined是原始数据类型
+			 */
+			
+			// 不进行手动赋值
+			var i;
+			console.log(i) // 结果：undefined
+			
+			// 赋值为 undefined
+			var k = undefined;
+			console.log(k)  // 结果 ：undefined
+			console.log(typeof k) // undefined
+			
+			// 注意 ：此时undefined与上边的undefined不同，
+			// 上边的是数值undefined，而这个是字符串undefined
+			var s = "undefined";
+			console.log(s);  //结果 :undefined
+			console.log(typeof s); // string
+		</script>
+	</body>
+</html>

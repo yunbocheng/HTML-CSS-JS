@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内补丁和外补丁</title>
+		<style type="text/css">
+			.mydiv {
+				width: 100px;
+				height: 100px;
+				background-color: aliceblue;
+				border: 1px red solid;
+				/* 打一个外补丁，在元素的上方打，会使该元素下移100px */
+				/* 在元素外边打补丁 */
+				margin-top: 100px;
+				
+				/* 内补丁 */
+				padding-right: 100px;
+				
+			
+			} 
+		</style>
+	</head>
+	<body>
+		<!-- 内补丁和外补丁 -->
+		<!-- 外补丁 margin-top:往元素的上方打外补丁 -->
+		<!-- 内补丁 padding-right:在元素内部打补丁 -->
+		<div class="mydiv">
+			
+		</div>
+	</body>
+</html>

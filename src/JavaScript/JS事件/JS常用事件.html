@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS常用事件</title>
+	</head>
+	<!-- load事件在什么时候发生？在页面元素全部加载完毕之后才会发生。 -->
+	<body onload="console.log('页面加载完毕了，load事件发生了！')">
+		<!-- 
+			JS中有哪些常见的事件：
+				(1) blur失去焦点
+				(2) focus获得焦点
+
+				(3) click鼠标单机
+				(4) dblclick鼠标双击
+
+				(5) change下拉列表选中项改变，或文本框内容改变
+
+				(6) keydown键盘按下
+				(7) keyup键盘弹起
+
+				(8) load页面加载完毕
+
+
+				(9) mousedown鼠标按下
+				(10) mouseover鼠标经过
+				(11) mousemove鼠标移动
+				(12) mouseout鼠标离开
+				(13) mouseup鼠标弹起
+
+				(14) reset表单重置
+				(15) select文本被选定
+				(16) submit表单提交
+		 -->
+		 blur事件：<input type="text" onblur="console.log('失去焦点了！')"/>
+		 <br>
+		 
+		 <!-- change事件：下拉列表项被改变时发生-->
+		 change事件：
+		 <select name="garde" onchange="console.log('下拉列表发生改变了')">
+		 	<option value="gz">高中</option>
+			<option value ="zk">专科</option>
+			<option value ="bk">本科</option>
+		 </select>
+		 <br>
+		 
+		 dblclick事件：
+		 <input type="button" value="鼠标双击" ondblclick="console.log('鼠标双击了！')"/>
+		 <br>
+		 
+		 focus事件：
+		 <input type="text" onfocus="console.log('获取到了焦点！')"/>
+		 <br>
+		 
+		 keydown和keyup事件：
+		 <input type="text" onkeydown="console.log('键盘按下了')" onkeyup="console.log('键盘弹起了')"/>
+		 <br>
+		 
+		mousemove鼠标移动：
+		<input type="text" onmousemove="console.log('鼠标移动了！')"/>
+		<br>
+		
+		mouseout鼠标离开：
+		<input type="button" onmouseout="console.log('鼠标离开了！')"/>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>NaN null undefined的区别</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				1. == 和 === 有什么区别？
+					== 等同于运算符，只比较值是否相等。
+					=== 全等运算符，既比较值是否相等，同时又比较数据类型是否相等。
+				2. null undefined NaN的区别？
+					类型都是不一样的。
+					null和undefined是等同关系。
+					
+			*/
+		   
+			var v1 = true;
+			var v2 = 1;
+			
+			// == 类似于java语言种的equals方法。
+			console.log(v1==v2);  // true
+			
+			console.log(v1===v2);  // false
+			
+			var v3 = 1;
+			console.log(v3 === v2); // true
+			
+			// null的类型属于原始类型，typeof运算符的结果是：object
+			console.log(typeof null);  // object
+			console.log(typeof NaN);   // number
+			console.log(typeof undefined); // undefined
+			
+			// NaN代表不是一个数字，但是有值。
+			console.log(null == NaN);  // false
+			console.log(null == undefined); // true
+			console.log(undefined == NaN); // false
+			
+			/* 
+				NaN,即非数值(Not a Number),有点奇怪的是：
+				
+					alert(NaN == NaN);      //false
+					alert(NaN != NaN);      //true
+					alert(NaN === NaN); 	//false
+				首先，NaN的主要职能是作为返回值，
+				当一个本来要返回数值的操作数未返回数值时（如0除以0），
+				在其他编程语言中，程序会报错，
+				而在JS中，系统会返回NaN其次，
+				问题原因就是ES规定的NaN的两个特点（规范设定）
+					1. 任何涉及NaN的操作都会返回NaN
+					2. NaN与任何值都不相等，包括NaN本身
+				
+			 */
+			
+			console.log(null === NaN);  // false
+			console.log(null === undefined); // false
+			console.log(undefined === NaN); // false
+		</script>
+	</body>
+</html>

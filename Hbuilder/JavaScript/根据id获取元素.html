@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>根据id获取页面中的某个节点</title>
+	</head>
+	<body>
+		
+		<!-- 脚本快 -->
+		<script type="text/javascript">
+			function getDivElt(){
+				/* 获取div节点对象 */
+				/* 
+					document对象是JS内置的对象，全部小写，可以直接拿来使用。
+					document对象代表的是浏览器窗口中的网页(文档)
+					DOM树：
+						对于document来说是一个HTML文档。
+						对于这个文档来说我们称为DOM树。
+						DOM树上有很多节点，每一个节点都有ID属性。
+						获取DOM树上的一个节点，可以根据id来获取。
+						
+						
+					window对象是JS内置的对象，全部小写，可以直接拿来使用。
+					window对象代表当前浏览器窗口。
+				 */
+				var mydivElt = document.getElementById("mydiv");
+				console.log(mydivElt);
+				
+				var usernameElt = document.getElementById("username");
+				 console.log(usernameElt);
+			}
+		</script>
+		
+		<!-- div节点对象 -->
+		<div id="mydiv">我是一个div对象</div>
+		
+		<!-- input输入域 -->
+		
+		<input type="text" id="username" />
+		
+		<input type="button" value="获取div节点元素" onclick="getDivElt()"/>
+	</body>
+</html>

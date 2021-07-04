@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>String类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				String类型：
+					1. String类型属于原始类型（基本数据类型）
+					2. 在JS中怎么定义字符串(String)，包括两种方式：
+						var s = "字符串";
+						var s = '字符串';
+						var s = new String("字符串");
+					3. 在JS当中提供了创建字符串的两种方式：
+						如果采用这种方式创建的字符串就属于原始数据类型！
+							var s = "hello";
+						如果采用这种方式创建的字符串就属于objject类型，
+						这里使用了Object类的子类Strig，String类是JS内置的，
+						可以直接使用。
+							var s = new String("hello")
+					4. 在JS中不管是原始数据类型的字符串还是Object类型的字符串，
+					   他们的方法和属性都是通用的。
+					
+					5. String类型当中常用的属性和方法：
+						常用属性：
+							length属性：获取字符串的长度
+						常用方法：
+							charAt() : 获取指定下表位置的字符。
+							concat() : 拼接字符串
+							indexOf() : 获取某个字符串在当前字符串中第一次出现处的索引。
+							lastIndexOf() : 获取某个字符串在当前字符串中最后一次出现处的索引。
+							replace() : 替换字符
+							split() : 拆分字符串
+							substr() : 截取字符串（begin length）
+							substring() : 截取字符串（begin end）注意：不包含end
+							toLowerCase() : 将字符串中的大写转为小写
+							toUpperCase() : 将字符串中的小写转为大写
+							
+							
+			 */
+			
+			var s1 = "abc";
+			console.log(typeof s1);  // string
+			
+			var s2 = new String("hello");
+			console.log(typeof s2);  // object
+			
+			// length属性
+			console.log("abced".length);  //5
+			
+			// 查找下标为3的字符
+			console.log("abced".charAt(3)); //e
+			 
+			// 拼接字符串
+			console.log("abc".concat("de")); //abcde
+			
+			// 第一次出现”=“的下标
+			console.log("abced=abd=ef".indexOf("=")); //5
+			 
+			// 最后一次出现”=“的下标
+			console.log("abced=adsh=dash".lastIndexOf("=")); //10
+			 
+			// 替换字符
+			console.log("1980-10-11".replace("-",",")); // 1980,10-11（替换所有需要使用正则表达式）
+			 
+			// 拆分字符串返回一个数组
+			var arr = "1920-10-11".split("-"); // var[] arr 这个错误的，在JS中没有这个语法。
+			// 遍历数组
+			for(var i = 0; i < arr.length; i++){
+				console.log(arr[i]);  // 1920 10  11 还是使用中括号加下标的方式访问数组中的元素。
+			}
+			
+			// (截取字符串)对于substr和substring来说，只有1个参数的话没有区别。
+			// 截取下标后边的字符串，而不是前边的
+			console.log("abcdef".substr(2)); // cdef
+			console.log("abcdef".substring(2)); //cdef 
+			
+			// (截取字符串)对于substr和substring来说，有2个参数会有什么区别？
+			// substr(startIndex,length)
+			// substring(startIndex,endIndex),需要注意，不包括endIndex。
+			console.log("abcdef".substr(2,3)); //cde
+			console.log("abcdef".substring(2,3)); //c 
+			
+			// 大写-->小写
+			console.log("ABcdef".toLowerCase()); //abcdef
+			// 小写-->大写
+			console.log("ABcdef".toUpperCase()); //ABCDEF
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>列表样式</title>
+
+  <style>
+    <!--id选择器-->
+    ul{
+      /*
+        去除无序列表前边的标记样式
+      */
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 无序列表 -->
+<!-- type属性可以改变无序列表前边的标记样式 -->
+<!-- circle代表空圆圈 -->
+<ul>
+  <!-- 列表项 -->
+  <li>中国
+    <!-- 无序列表中嵌套无序列表 -->
+    <!-- square代表正方形 -->
+    <ul  >
+      <li>北京
+        <!-- 嵌套三级无需列表 -->
+        <!-- disc代表实圆圈-->
+        <ul >
+          <li>海淀区</li>
+          <li>大兴区</li>
+          <li>昌平区</li>
+        </ul>
+      </li>
+      <li>天津</li>
+      <li>河北</li>
+    </ul>
+  </li>
+  <li>美国</li>
+  <li>日本</li>
+</ul>
+</body>
+</html>

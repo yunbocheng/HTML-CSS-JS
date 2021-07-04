@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>html.divAndspan.列表</title>
+	</head>
+	<body>
+		
+		<!-- 无序列表 -->
+		<!-- type属性可以改变无序列表前边的标记样式 -->
+		<!-- circle代表空圆圈 -->
+		<ul type="circle">
+			<!-- 列表项 -->
+			<li>中国 
+			<!-- 无序列表中嵌套无序列表 -->
+			<!-- square代表正方形 -->
+				<ul type="square">
+					<li>北京
+					<!-- 嵌套三级无需列表 -->
+					<!-- disc代表实圆圈-->
+						<ul type="disc">
+							<li>海淀区</li>
+							<li>大兴区</li>
+							<li>昌平区</li>
+						</ul>
+					</li>
+					<li>天津</li>
+					<li>河北</li>
+				</ul>
+			</li>
+			<li>美国</li>
+			<li>日本</li>
+		</ul>
+		
+		
+		<!-- 有序列表 -->
+		<!-- type属性可以改变前边序号的样式 -->
+		<!-- A代表排序时 前边的序号为 ABCDEF... -->
+		<ol type="A">
+			<li>水果
+				<!-- 有序列表中嵌套有序列表 -->
+				<ol type="a">
+					<li>香蕉
+						<!-- 三级嵌套有序列表 -->
+						<ol type="1">
+							<li>小香蕉</li>
+							<li>大香蕉</li>
+						</ol>
+					</li>
+					<li>葡萄</li>
+					<li>橙子</li>
+				</ol>
+			</li>
+			<li>蔬菜
+				<!-- 蔬菜中嵌套有序列表 -->
+				<ol>
+					<li>茄子
+						<!-- 蔬菜中嵌套的三级有序列表 -->
+						<ol>
+							<li>圆茄子</li>
+							<li>长茄子</li>
+							<li>紫茄子</li>
+						</ol>
+					</li>
+					<li>西兰花</li>
+					<li>土豆</li>
+				</ol>
+			</li>
+			<li>茶</li>
+		</ol>
+	</body>
+</html>

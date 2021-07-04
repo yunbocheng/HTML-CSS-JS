@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS中的函数不存在重载</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/* 以下代码测试JS函数可不可以重载 */
+		
+			/* 声明第一个函数：存在两个参数 */
+			function test1(a,b){
+				alert("test1(a,b)");
+			}
+			
+			/*  声明第二个函数，和第一个函数的函数名相同，只是参数列表不用，
+				测试JS函数能不能重载
+			*/
+			function test1(){
+				alert("test1()");
+			}
+			
+			// 调用函数
+			test1(1,2);  // 显示的结果为：test1()
+			
+			/* 
+				重点：
+					在JS中，函数不会重载，上边结果之所以那么显示，不是因为就近原则的存在
+					而是在JS中，如果声明两个同名的函数，那么第二个函数会替代第一个函数，
+					这里只的并不是覆盖，而是第一个函数会消失，只剩第二个函数
+					
+				注意：
+					在编写JS函数名的时候，谨慎一些，以放将其他的函数删除掉。
+			 */
+			
+		</script>
+		
+		<!-- 显示的结果是 ：test1()，说明在JS中函数不呢个进行重载。 -->
+		<input type="button" value="重载" onclick="test1(111,222)"/>
+		
+		
+	</body>
+</html>
