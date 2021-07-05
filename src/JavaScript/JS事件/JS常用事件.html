@@ -4,7 +4,11 @@
 		<meta charset="utf-8">
 		<title>JS常用事件</title>
 	</head>
-	<!-- load事件在什么时候发生？在页面元素全部加载完毕之后才会发生。 -->
+	<!--
+		load事件：
+			1. load事件不是在页面加载过程中触发的。
+			2. load事件是在页面中所有元素全部加载完毕之后才会发生的。
+	-->
 	<body onload="console.log('页面加载完毕了，load事件发生了！')">
 		<!-- 
 			JS中有哪些常见的事件：
@@ -29,40 +33,82 @@
 				(13) mouseup鼠标弹起
 
 				(14) reset表单重置
-				(15) select文本被选定
-				(16) submit表单提交
+				(15) submit表单提交
+				
+				(16) select文本被选定
 		 -->
-		 blur事件：<input type="text" onblur="console.log('失去焦点了！')"/>
+		 
+		 
+		 select(文本被选定)事件：
+		 <textarea rows="10" cols="30"onselect="console.log('文本被选中了')">文本(此时的文本会在文本框中显示，且可以被修改)</textarea>
+		 <input type="text" onselect="console.log('文本被选中了')"/>
+		 <br>
+		 
+		 测试表单提交(submit)和重置事件(reset)
+		 <!-- 
+			action="" 里边什么也不写，代表当前页面的路径，
+			action="https://www.baidu.com" 代表提价到百度。
+			按照以下这样写，点击提交按钮，首先会跳出弹窗，（表单提交了），之后会跳转百度到百度界面。
+				<form action="https://www.baidu.com" onsubmit="alert('表单提交了')" onreset="alert('表单重置了')">
+					<input type="submit" value="提交" />
+					<input type="reset"  value="重置"  />
+				</form>
+		 -->
+		 
+		 <form  onreset="alert('表单重置了')" onsubmit="alert('表单提交了')" >
+			<input type="text" />
+		 	<input type="submit" value="提交" />
+		 	<input type="reset"  value="重置" />
+		 </form>
+		 	
+		
+		 blur(失去焦点)事件：
+		 <input type="text" onblur="console.log('失去焦点了！')"/>
 		 <br>
 		 
 		 <!-- change事件：下拉列表项被改变时发生-->
-		 change事件：
+		 change(下拉列表选中项改变，或文本框内容改变)事件：
 		 <select name="garde" onchange="console.log('下拉列表发生改变了')">
+			<option value ="1">请选择您的学历</option>
 		 	<option value="gz">高中</option>
 			<option value ="zk">专科</option>
 			<option value ="bk">本科</option>
 		 </select>
 		 <br>
 		 
-		 dblclick事件：
+		 click(鼠标单机)事件：
+		 <input type="button" value="鼠标单机" onclick="console.log('鼠标单机了')" />
+		 <br>
+		 
+		 dblclick(鼠标双击)事件：
 		 <input type="button" value="鼠标双击" ondblclick="console.log('鼠标双击了！')"/>
 		 <br>
 		 
-		 focus事件：
+		 focus(获得焦点)事件：
 		 <input type="text" onfocus="console.log('获取到了焦点！')"/>
 		 <br>
 		 
-		 keydown和keyup事件：
+		 keydown(键盘按下)和keyup(键盘弹起)事件：
 		 <input type="text" onkeydown="console.log('键盘按下了')" onkeyup="console.log('键盘弹起了')"/>
 		 <br>
 		 
-		mousemove鼠标移动：
+		mousemove(鼠标移动)事件：
 		<input type="text" onmousemove="console.log('鼠标移动了！')"/>
 		<br>
 		
-		mouseout鼠标离开：
+		mouseout(鼠标离开)事件：
 		<input type="button" onmouseout="console.log('鼠标离开了！')"/>
 		
+		<input type="text" value="鼠标离开" onmouseout="alert('鼠标离开了文本框')" />
+		
+		<br>
+		测试鼠标全部事件（在一个div中）:
+		<div  id="mouseDiv" onmousemove="console.log('鼠标经过了')"
+						   onmousedown="console.log('鼠标按下了')"
+						   onmouseout="console.log('鼠标离开了')"
+						   onmouseup="console.log('鼠标弹起了')"
+						   onmousemove="console.log('鼠标移动了')">
+		</div>
 		
 	</body>
 </html>

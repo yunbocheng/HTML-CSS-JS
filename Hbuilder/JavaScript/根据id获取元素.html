@@ -13,15 +13,29 @@
 				/* 
 					document对象是JS内置的对象，全部小写，可以直接拿来使用。
 					document对象代表的是浏览器窗口中的网页(文档)
+					document代表整个HTML文档。
 					DOM树：
 						对于document来说是一个HTML文档。
 						对于这个文档来说我们称为DOM树。
 						DOM树上有很多节点，每一个节点都有ID属性。
 						获取DOM树上的一个节点，可以根据id来获取。
-						
-						
 					window对象是JS内置的对象，全部小写，可以直接拿来使用。
 					window对象代表当前浏览器窗口。
+
+					在JS当中有一个内置的隐含的对象叫做：document
+					document代表整个HTML文档
+
+					在JS当中有一个内置的隐含的对象叫做：window
+					window代表整个浏览器窗口
+
+					window对象是BOM的顶级对象，BOM中的老大。
+					document对象是DOM的顶级对象，DOM中的老大。
+					ECMAScript:JS语法的核心
+					DOM:是对网页中文档中的节点进行增删改。
+					BOM:操作浏览器窗口的，列如：前进、后退、地址栏、关闭窗口
+
+
+					严格意义上讲，window是包含document的。
 				 */
 				var mydivElt = document.getElementById("mydiv");
 				console.log(mydivElt);
@@ -39,5 +53,7 @@
 		<input type="text" id="username" />
 		
 		<input type="button" value="获取div节点元素" onclick="getDivElt()"/>
+
+
 	</body>
 </html>

@@ -36,6 +36,9 @@
 
 6. 在java中有三大块：javaSE、JavaEE、JavaME
 
+ECMAScript:JS语法的核心
+DOM:是对网页中文档中的节点进行增删改。
+BOM:操作浏览器窗口的，列如：前进、后退、地址栏、关闭窗口
 ![](https://gitee.com/YunboCheng/imageBad/raw/master/image/20210703155938.png)
 
 ![](https://gitee.com/YunboCheng/imageBad/raw/master/image/20210703162126.png)
