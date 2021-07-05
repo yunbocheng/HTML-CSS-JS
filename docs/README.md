@@ -13,7 +13,6 @@
   <img src="https://visitor-badge.glitch.me/badge?page_id=YunboCheng4379.HTML-CSS-JS-Ajax-jQuery" >
 <br>
 <br>
-    <a href="https://yunbocheng4379.github.io/HTML-CSS-JS-Ajax-jQuery/">在线阅读</a>
 </div>
 
 ## Star 曲线
