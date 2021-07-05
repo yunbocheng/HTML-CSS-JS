@@ -86,7 +86,7 @@ W3C在线文档 :
 
 ## 七、许可证
 
-在 MIT 许可下分发。有关更多信息，请参阅[`LICENSE`](./LICENSE)。
+在 MIT 许可下分发。有关更多信息，请参阅[`LICENSE`](https://github.com/YunboCheng4379/HTML-CSS-JS-Ajax-jQuery/blob/main/LICENSE)
 
 ## 八、致谢
 
