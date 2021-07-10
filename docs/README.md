@@ -16,6 +16,7 @@
 </div>
 
 ## Star 曲线
+
 ![](https://starchart.cc/YunboCheng4379/HTML-CSS-JS-Ajax-jQuery.svg)
 
 ## 一、Web知识架构
