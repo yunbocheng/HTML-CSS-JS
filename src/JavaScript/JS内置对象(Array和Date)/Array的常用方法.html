@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Array的常用方法</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+			// 创建一个长度为0的数组对象
+			var a = [];
+			
+			console.log("数组的元素个数是 ：" + a.length);
+			
+			// 添加元素
+			a.push(100);
+			a.push(200);
+			a.push(300);
+			a.push(400);
+			a.push(500);
+			
+			console.log("push之后数组中元素的个数 ：" + a.length);
+			
+			a = [1,2,3];
+			// push方法：向数组中添加一个元素，并且加到末尾。
+			a.push(false);
+			for(var i in a){
+				console.log(a[i]);  // 1 2 3 false
+			}
+			
+			// pop方法：将数组末尾的元素弹出，并且数组长度-1
+			console.log(a.length);  // 4
+			console.log(a.pop()); // false
+			console.log(a.length); // 3
+			
+			// 注意：JS数组的push和pop方法联合起来，实际上是模拟了栈数据结构。
+			var arr = [];
+			arr.push(1);
+			arr.push(2);
+			arr.push(3);
+			
+			// 上边存储的顺序为 ： 123
+			// 下边取出的顺序为 ：321
+			console.log(arr.pop());
+			console.log(arr.pop());
+			console.log(arr.pop());
+			
+			// 翻转数组
+			var array = [1,2,3,4];
+			array.reverse();
+			for(var i in array){
+				console.log(array[i]); // 4321
+			}
+			
+			// 连接(将数组中的每一个元素以"$"连接成一个字符串)
+			var str = array.join("$"); // 4$3$2$1
+			console.log(str);
+			
+			var str1 = array.join("_"); // 4_3_2_1
+			console.log(str1);
+			
+		</script>
+	</body>
+</html>

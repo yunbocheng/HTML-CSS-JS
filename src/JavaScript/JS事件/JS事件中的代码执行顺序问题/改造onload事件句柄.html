@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>代码的执行顺序(解决问题升级版)</title>
+	</head>
+	
+	<!-- 页面加载完毕之后监听器调用myfun() 回调函数-->
+	<!-- <body onload="myfun()"> -->
+	<body id="mybody">
+		
+		<script type="text/javascript">
+			
+			/* 
+				定义一个函数 ,用于测试onload事件
+				下边这个是箭头函数的定义方式，和普通的定义方式结果一样。
+				myfun =()=>console.log("myfun execute!");
+				// 下边是调用这个函数
+				window.onload = myfun();
+			*/
+		   
+		   
+			function myfun(){
+				console.log("myfun execute!(不是匿名函数)");
+			}
+			/* 
+				在页面打开的时候，以下代码会执行，这行代码执行的作用是：
+					将回调函数myfun注册到load事件上。
+				当页面全部加载完毕之后，会发生load事件，load事件发生之后，
+				监听器负责调用回调函数myfun
+			 */
+			
+			/* 
+				以下这个代码和window.onload = myfun是一样的：
+				只不过以下的这个代码要在 body标签中指定id属性。id="mybody"
+				document.getElementById("mybody").onload = myfun
+			 */
+			
+			/* 
+				最原始的代码：
+					定义一个方法：
+					function myfun(){
+						console.log("页面加载完毕");
+					}
+					获取id元素对象
+					var s = document.getElementById("mybody");
+					s.onload = myfun;
+			 */
+			window.onload = myfun;
+			
+			/* 上边使用的是注册事件的第二种方式，分开写的，不是匿名函数 */
+			
+			/* 下边使用的为：匿名函数 */
+			window.onload = function(){
+				console.log("myfun execute!(匿名函数)")
+			}
+			
+			/* 
+				上边虽然有两个window.onload，但是此时只会显示第二个的结果 
+				因为第二个window.onload会覆盖第一个。返回第二个的测试结果
+			*/
+		   
+		   /* 箭头函数定义方式（高级）*/
+		   window.onload = myfun =()=>console.log("myfun execute!(箭头函数定义法)");
+		   
+		</script>
+	
+	</body>
+</html>

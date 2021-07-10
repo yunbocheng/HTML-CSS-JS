@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>提出代码的执行顺序问题</title>
+	</head>
+	<body>
+		<!-- 提出问题 -->
+		<!-- 当前代码存在执行顺序的问题，空指针异常 ，未解决！-->
+		<!-- 
+			此时为什么会报这个异常：
+				因为HTML和JS代码是自上而下执行的，将JS代码中的获取元素id代码
+				写在了含有id属性的按钮(文本)的前边，此时id属性还没有在浏览器中注册
+				找不到对应的id属性，所以会报空指针异常
+			最简单的解决办法：将JS中使用到的包含id属性的元素写在 JS脚本块 的前边
+			如果一定要写在后边，请见下一个笔记：代码的执行顺序(解决问题)
+		 -->
+		<script type="text/javascript">
+			
+			/* 
+				根据id获取元素
+				代码执行到这里的时候i，id="btn"的节点还没有加载到浏览器的内存当中，所以以下代码返回null
+			 */
+			var btnElt = document.getElementById("btn");
+			// 现在在控制台输出 btnElt 会发现，此时的btnElt为null
+			console.log(btnElt) //null
+			
+			/* 绑定鼠标单机事件 */
+			btnElt.onclick = function(){
+				console.log("按钮被点击了，匿名函数被掉用");
+			}
+		</script>
+		
+		<input type="button"  id="btn" value="按钮" />
+		
+		</body>
+</html>

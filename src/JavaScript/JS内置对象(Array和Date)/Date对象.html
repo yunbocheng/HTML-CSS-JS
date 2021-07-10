@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS的内置对象Date</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				JS的内置对象，Date
+			 */
+			// 创建一个日期对象，有三种形式，查看JS文档
+			var time = new Date(); // 获取系统当前时间
+			
+			console.log(time);  // Fri Jul 09 2021 20:14:07 GMT+0800 (中国标准时间)
+		
+			// 进行格式转换
+			// 可以将年月日的信息都拿出来，然后自己拼接格式
+			var year = time.getFullYear();
+			var month = time.getMonth(); // 0~11 表示 1~12，要在后边加1
+			// var day = time.getDay(); // 获取的星期几
+			var day = time.getDate(); // 获取一个月份中的第几天
+			
+			// 2021年7月9日
+			console.log(year + "年" + (month+1) + "月" + day + "日");
+			// 也可以拿到时分秒，省略了
+			time.getHours();
+			
+			// 在JS中提供了一个函数toLocaleString()，其实这个函数是Object中的。
+			// 转换成具有本地环境语言的日期格式
+			var strTime = time.toLocaleString();
+			console.log(strTime); // 2021/7/9下午8:23:03
+			
+			// 怎么获取自"1970年1月1日 00:00:00 000"到系统当前时间的总毫秒数
+			// 这个一定要就记住，重点，getTime()方法。
+			// new Date()获取时间戳
+			console.log(new Date().getTime());  // 25833647060
+			
+		</script>
+	</body>
+</html>
+ 

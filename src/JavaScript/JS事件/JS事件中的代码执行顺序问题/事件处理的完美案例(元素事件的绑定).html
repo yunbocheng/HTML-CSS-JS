@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件的最后一个完美案例(元素事件的绑定)</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			/* 这段代码有3个回调函数 */
+			/* 最外层的回调函数是在load事件发生之后才会执行！ */
+			window.onload = function(){
+				
+			/* 	// 给 id="btn1"的元素绑定鼠标单击
+				var btn1Elt = document.getElementById("btn1");
+				btn1Elt.onclick = function(){
+					console.log("按钮1被点击了");
+				}
+				
+				// 给 id="btn2"的元素绑定鼠标单击
+				var btn2Elt = document.getElementById("btn2");
+				btn2Elt.onclick = function(){
+					console.log("按钮2被点击了");
+				} */
+				
+				document.getElementById("btn1").onclick = function(){
+					console.log("按钮1点击")
+				}
+				
+				document.getElementById("btn2").onclick = function(){
+					console.log("按钮2点击")
+				}
+				
+				document.getElementById("password").onblur = function(){
+					console.log("失去焦点了")
+				}
+			}
+		</script>
+		
+		<input type="button" id="btn1" value="按钮1" />
+		<input type="button" id="btn2" value="按钮2" />
+		<input type="text"  id="password" />
+	</body>
+</html>

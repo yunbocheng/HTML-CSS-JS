@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS的控制语句</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			/* 
+				1. JS中的控制语句（和java相同，JS中除了java的控制语句之外，还有一些特别的。）
+					选择结构：
+						if语句
+						swith语句
+					循环结构:
+						for
+						while
+						do..while
+					转向语句:
+						break
+						continue
+						return
+				
+				2. JS的特殊语句：
+					了解一下(不需要掌握)：
+						for..in 语句
+						with 语句
+			 */
+			for (var i = 0; i < 10; i++) {
+				console.log("i= " + i);
+			}
+			
+			var username = "jack";
+			if(username){ // 在这个地方存在一个隐藏的Boolean()函数
+			/* 
+				Boolean()函数，这个函数的作用是？
+				将不是布尔类型的数据转换为布尔类型。
+				只要有数据就会返回 true
+			 */
+				console.log("welcome:" + username );
+			}else {
+				console.log("uesrname不能为null");
+			}
+			
+			// 数组(JS中的数组对象创建的时候使用的是：中括号[])
+			// var arr = [1,2,3,4,5];
+			// 在JS的数组中的数据类型随意，可以不一致
+			var arr = [true,1,3.14,"abc",'a'];
+			// 对数组进行遍历
+		/*	for (var i = 0; i < arr.length; i++){
+				console.log(arr[i]);
+			}*/
+
+		/*for..in 语句 (遍历数组) 第一种用法*/
+		for (var index in arr){ // arr是数组的话，index代表数组元素的下表
+			// console.log(index);  // 0 1 2 3 4(输出的为数组的下标)
+			console.log(arr[index]);
+		}
+
+		/* for..in语句还可以获取对象的属性值 第二种用法*/
+			/*下边是定义一个类*/
+		Employee = function (empno,ename){
+			/*
+			* this.属性名 = 参数;
+			  this.属性名 = 参数;
+              其中属性名是任意的。（符合标识符命名规则即可）
+			* */
+
+			this.empno = empno;
+			this.ename = ename;
+		}
+			// 创建一个新的对象
+			var e = new Employee(7369,"SHITH");
+			console.log(e.empno + "," + e.ename);  // 7369,SHITH
+			console.log(e["empno"] + "," + e["ename"]); // 7369,SHITH
+			
+			// for..in语句遍历对象的属性
+			for(var huh in e){ // e是JS对象的话，huh(这个可以按照标识符格式随便定义)就是对象的属性名。并且属性名是字符串
+				console.log(typeof huh); // string string 说明输出的这两个属性为字符串
+				console.log(huh); // empno ename
+				console.log(e[huh]); // ename SHITH
+				
+				// 不可以按照下边的格式写 ，就是 . 
+				// console.log(e.huh);  undefined (找不到元素) console.log(e."empno");
+			}
+		/*			
+		* for..in 语句与java中的增强for循环不同
+		*
+		* 下边是java的增强for循环
+		* for (int i : array) {
+		* // 这个i代表的是数组中的元素，而JS中的index代表的是数组中元素的下标。
+            System.out.println(i);
+        }
+		* */
+		
+		/* with语法 */
+		var x = new Employee(7369,"SHITH");
+		// console.log(e.empno + "," + e.ename);
+		with(x){
+			console.log(empno + "," + ename) // 7369,SHITH
+		}
+		</script>
+	</body>
+</html>

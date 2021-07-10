@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM与BOM的区别</title>
+	</head>
+	<body>
+		
+		<div id="div1">
+			
+		</div>
+		<script type="text/javascript">
+			/* 
+				BOM:Browser Object Model（浏览器对象模型）
+				    通过BOM的对象和方法可以完成浏览器窗口的操作，
+					例如：关闭窗口，前进，后退，修改地址栏的地址，
+					这些操作都属于BOM，BOM的顶级内置对象那个是window;
+				DOM:Document Object Model(文档对象模型)，
+					通过DOM的对象和方法可以完成网页中元素
+					的增删改，让网页产生动态效果，
+					DOM的顶级对象是document.
+					
+				BOM是浏览器，DOM是浏览器上的网页，所以BOM是包含DOM的。
+				
+			 */
+			window.onload = function(){
+				// window对象是BOM的顶级老大
+				// docunment对象是DOM的顶级老大
+				// 实际上完成的写法是：
+				//	var divObj = window.document.getElementById("div1");
+				// 只不过  window.可以省略
+				var divObj = document.getElementById("div1");
+				 console.log(divObj);
+			}
+			
+			/* 以下两行代码其实是一样的，只是省略了window */
+			console.log(document.getElementById("div1");
+			console.log(window.document.getElementById("div1"));
+			
+		</script>
+	</body>
+</html>

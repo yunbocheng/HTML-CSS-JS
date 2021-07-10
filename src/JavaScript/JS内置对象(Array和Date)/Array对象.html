@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS的内置对象Array对象，Aray是一个数组类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			/* 
+				关于JS中的数组：
+					1. 怎么创建数组对象
+					2. 怎么遍历数组
+					3. 怎么修改数组中的某个元素
+					4. 怎么读取数组中的某个元素
+					...
+					
+				java语言创建数组？
+					String[] strs = {"abc","cde","edf"};
+					
+				JS语言创建数组？
+					var strs = ["abc","def","xyz"];
+					
+			 */
+			
+			// 创建数组的第一种方式
+			var a2 = [];	// 创建一个长度为0的数组对象
+			
+			// JS中数组中的元素可以不一致。
+			var a2 = [12,3,3.14,true,false,'a'];
+			
+			// JS中数组的长度是可变的
+			console.log(a2[0]);
+			console.log(a2[a2.length - 1]) // 数组有length属性获取数组中元素的个数。
+			
+			// 没有扩展之前 ：[12,3,3.14,true,false,'a']
+			// a2[100]会导致自动扩容：[12,3,3.14,true,false,'a',undefined,undefined,undefined....,1234]
+			// JS的数组中没有下标越界这一说
+			a2[100] = 1234;
+			console.log("数组的长度=" + a2.length); // 数组的长度 = 101（下标0到100，正好101个元素）
+			console.log(a2[100]);  // 1234
+			console.log(a2[99]);   // undefined
+			console.log(a2[-100])  // undefined
+			console.log(a2.length)// 101
+			// 创建数组的第二种方式：
+			var arr1 = new Array();  //创建长度为0的数组
+			console.log(arr1.length);  // 0
+			
+			var arr2 = new Array(3);  //创建长度为3的数组
+			console.log(arr2.length);  // 3
+			// 遍历 arr2 数组
+			for(var i = 0; i<arr2.length;i++){
+				// 结果为 3个 undefind
+				console.log(arr2[i]);
+			}
+			
+			
+			var arr3 = new Array(1,2,3,4,7);  //创建有指定数值的数组
+			console.log(arr3.length);  // 5
+			
+			// 遍历 arr3 数组
+			for(var i = 0; i<arr3.length;i++){
+				// 结果为 1 2 3 4 7
+				console.log(arr3[i]);
+			}
+			
+			// 改变数组中的元素
+			arr3[3] = 8;
+			// arr3 的数组中下标为3的元素会由4变为8，
+			for(var i = 0;i<arr3.length;i++){
+				// 结果为 ：1 2 3 8 7 
+				console.log(arr3[i]);
+			}
+		</script>
+	</body>
+</html>

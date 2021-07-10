@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>void运算符</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				1. JS当中有很多运算符
+					算术运算符
+					逻辑运算符
+					关系运算符
+					位运算符
+					三目运算符
+					赋值运算符
+					...
+					和Java那一套是一样的。这里就不说了。
+					
+				2. 我们这里主要学习一下：
+					JavaScript当中的void和typeof运算符。
+					typeof运算符，可以在程序运行阶段获取变量的数据类型，
+					结果为6个字符串。
+					typeof运算符（非常重要****）
+					typeof运算符可以在JS代码运行的过程当中，动态的获取变量的数据类型。
+					typeof运算符的语法格式：typeof 变量名
+					typeof运算符的运算结果是以下6个字符串之一：
+						"undefined"
+						"number"
+						"string"
+						"boolean"
+						"object"
+						"function"
+						并且以上的6个字符是全部小写的。
+						
+				3. void运算符
+					语法格式：
+						void(表达式)
+						执行表达式，但是不反悔结果
+						即使表达式有执行结果，最终经过void运算之后就什么都没了。
+			 */
+			
+			
+		</script>
+		
+		页面顶部！
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		
+		
+		<!-- 
+			1. 添加href属性，这样可以保留住超链接的样式。
+			2. onclick后面可以编写JS代码，这样点击的时候JS代码执行了。
+			3. 执行完JS代码还必须让界面不跳转
+			
+			关键的位置是，怎么保证不能跳转？
+				如果没有跳转路径的话，他自然就不跳转了。
+			
+			href="javascript:void(0)"
+				void运算符执行表达式，但是不反悔任何结果：void(表达式) 执行结束之后啥也没有，并且没有""
+				
+			这样记忆：		
+				href后面添加一个：javascript:void(0)
+				表示把href的连接地址废弃掉。
+				
+		 -->
+		 <!-- void(这个参数可以随便写) 例如：void(0) void(1) void(dash)-->
+		<a href="javascript:void(dasdh)" onclick="alert('执行了JS代码！')">
+			要求：保留住超链接的样式，并且点击我执行一段JS代码，
+			执行完JS代码之后保证页面不跳转。
+			</a>
+	</body>
+</html>

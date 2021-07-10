@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>解决代码执行顺序问题</title>
+	</head>
+	
+	<!-- 
+		以下代码解决问题并不是很完美：
+			发生onload事件的函数定义方式为第一种，不是很完美
+			发生onclick事件的函数定义的方式为第二种。
+	 -->
+	<!-- 
+		页面加载完毕之后监听器调用pass()函数
+		<body onload="pass()"> 代码执行到这里的时候，页面中的元素全部加载完毕了！
+		此时 id="btn" 元素在浏览器里边存在，此时 使用 document.getElementById 
+		 获取元素对象可以成功
+	-->
+	
+	<body onload="pass()">
+		
+		<!--
+			以下两种方式都可以定义一个按钮：
+			
+			<button id="btn">按钮</button>
+			<input type="button" value="but1" />
+		 -->
+		<script type="text/javascript">
+			
+			/* 
+				这个为解决id属性在 JS脚本块 的后边的问题(解决空指针异常):
+				
+				为什么要将 注册id元素用的 JS代码 写在pass()函数的方法体中：
+					因为 调用pass()函数的事件为 onload事件(页面加载完毕事件)，也就是说只有当网页中的
+					都执行完毕的时候，这个时候网页中的所有元素都在网页中国进行了注册，包括按钮中的id属性
+					此时才会触发 onload事件，onload事件发生会调用pass()函数，pass()函数的方法体执行，
+					会进行获取id元素的对象，执行onclick事件，此时存在id属性的元素已经在浏览器中注册，
+					可以进行使用，不会报 空指针异常。在这个时候，即使含有id属性的元素在 JS脚本快 的下边，
+					这个时候的id属性也在浏览器中完成了相应的注册，此时获取id元素对象就可以获取到了
+					
+			 */
+			function pass(){
+				
+				/* 获取id元素 */
+				var btnElt = document.getElementById("btn");
+				
+				/* 定义匿名函数 */
+				btnElt.onclick = function(){
+					console.log("我是一个匿名内部类");
+				}
+			}
+			
+		</script>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+</html>

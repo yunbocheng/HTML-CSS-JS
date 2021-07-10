@@ -50,10 +50,28 @@
 		
 		<!-- input输入域 -->
 		
-		<input type="text" id="username" />
+		<input type="text" id="username"/>
 		
 		<input type="button" value="获取div节点元素" onclick="getDivElt()"/>
 
+		<hr>
+
+
+		<intput  type="button" id="mybtn" value="按钮"/>
+		<script type="text/javascript">
+			alert("阻止程序的执行！");
+
+			var mybtnElt = document.getElementById("mybtn");
+
+			console.log(mybtnElt);
+			alert(mybtnElt);
+
+			// 重点：在JS当中，当获取了一个节点之后，这个节点中有什么属性你就可以“点”什么。
+			// 可以改变mybtnElt对象中的 type属性
+			mybtnElt.type = "checkbox";
+			// 可以改变mybtnElt对象中的 value 属性，也可以改变id属性，但是没有意义。
+			mybtnElt.value = "我是一个按钮对象";
+		</script>
 
 	</body>
 </html>

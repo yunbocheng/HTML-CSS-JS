@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS注册的第二种方式</title>
+	</head>
+	<body>
+		<!-- 
+			input标签中存在 onclick 属性，只是省略了，下边可以更改input标签中的 onclick 属性 	
+		-->
+		<!-- 
+			这种情况下，将按钮写在JS代码之前，才可以在JS代码中通过id准确的获取元素对象
+		 -->
+		<input type="button" id="mybtn" value="按钮" />
+		
+		<script type="text/javascript">
+			/* 
+				定义一个sum函数
+			 */
+			function sum(){
+				console.log("我不是匿名函数");
+			}
+			
+			/* 根据id获取button对象 ,即获取元素*/
+			var mybtnElt = document.getElementById("mybtn");
+			
+			/* 
+				元素种有什么属性，就能“点”什么？
+				此时元素是input,input元素里边含有button属性
+				这行代码在页面打开的时候会被执行，这行代码执行的意义：
+					将sum这个回调函数绑定在mybtn的click事件上。
+				这个回调函数sum在什么时候执行？
+					click事件发生之后才会被监听器调用。
+			 */
+			// 注意：此时要写 sum 而不是mybtnElt.onclick = sum();
+			// 只有发生单机按钮事件才会在控制台显示 我不是匿名函数；
+			/* 单机事件 */
+			mybtnElt.onclick = sum;
+			
+			/* 
+				回调函数可以是一个匿名函数
+				这行代码的执行只是完成事件ondblclick(双击事件)的注册，给ondblclick事件注册一个回调函数
+				这行代码执行的时候，回调函数并不会被执行。
+				只有当按钮发生ondblclick事件之后，这个回调函数会自动被监听器来调用。
+				
+			 */
+			
+			/* 双击事件 */
+			mybtnElt.ondblclick = function(){
+				console.log("我是一个匿名函数");
+			}
+			
+			/* 注意：以上双击事件的执行一次，必将导致单机事件的执行两次 */
+		</script>
+		
+	</body>
+</html>

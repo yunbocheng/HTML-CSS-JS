@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试JS注册事件程序</title>
+	</head>
+	<body id="mybody" onload="pass()">
+		
+		<script type="text/javascript">
+		
+			pass = function(){
+				function myfun(){
+					console.log("测试成功");
+				}
+				// 获取id元素对象
+				var s = document.getElementById("btn");
+				s.onclick = myfun;
+			}
+		</script>
+		<input type="button"  id="btn" value="按钮" />
+		
+		<hr >
+		
+		<!-- 箭头函数定义(高级) -->
+		<script type="text/javascript">
+			pass =()=>{	function myfun(){
+					console.log("测试成功");
+				}
+				// 获取id元素对象
+				var s = document.getElementById("btn");
+				s.onclick = myfun;}
+		</script>
+	</body>
+</html>

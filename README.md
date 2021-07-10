@@ -25,13 +25,13 @@
 
 ## 二、项目结构的思维导图
 
-![JVMStudy](./JVMStudy.png)
+![](https://gitee.com/YunboCheng/imageBad/raw/master/image/20210709191018.png)
 
 ## 三、清单
 
 ### 1. HTML
 
--	[1-背景图片](https://github.com/YunboCheng4379/HTML-CSS-JS-Ajax-jQuery/tree/main/src/html/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87)
+-	[1-背景图片](./src/html/背景图片)
 -	[2-超级连接](./src/html/超级连接href)
 -	[3-form表单1](./src/html/form表单1)
 -	[4-form表单2](./src/html/form表单2)

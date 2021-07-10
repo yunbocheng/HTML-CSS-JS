@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>回车键捕获(怎么在JS中捕捉键值)</title>
+	</head>
+	<body>
+		
+		<!-- 
+			用户需求：在我们登录百度或者其他软件的时候 习惯性的输入完账号密码
+			，习惯性的按键盘的“回车键”进行提交登录，这个时候就需要网页代码可以
+			识别用户此时输入的这个“回车键”的意义。
+		-->
+		
+		<script type="text/javascript">
+			
+			/* 
+				给"id=username"的节点绑定 keydown 事件
+				后面的这个回调函数是我们编写的，但是调用者是监听器
+				监听器调用这个回调函数的时候会传过来一个事件对象，
+				你如果需要使用这个事件对象的时候，就可以写上，
+				如果不需要就不写，可以省略。
+				
+				x,y都是变量名字，随便写，只要符合标识符命名规则就行。
+			*/
+			window.onload = function(x){ // x代表的就是一个load事件对象。
+			document.getElementById("username").onkeydown = function(y){// y代表的就是一个keydwon事件对象。
+			/* 
+				在这里捕捉键值，当用户输入的是回车键，则登录。
+				新知识点：
+					所有的“键盘事件对象”，有keyCode属性可以获取键值。
+					keyCode是键盘事件对象的属性
+				记住：
+				键盘上“回车键”的兼职永远都是：13 
+			 */
+			if(y.keyCode == 13){
+				console.log("登录中，正在进行身份验证，请稍后.....");
+			}else if(y.keyCode == 27){
+				console.log("系统安全退出了!");
+			}else{
+				console.log("输入有错误！");
+			}
+			}	
+			}
+		</script>
+		用户名：<input type="text" id="username"/>
+	</body>
+</html>

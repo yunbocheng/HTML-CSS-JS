@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>箭头注册函数测试</title>
+	</head>
+	<body onload="pass()" id="mybody">
+		<script type="text/javascript">
+		
+			/* 
+				以前的写法：
+				
+					定义一个函数
+					function myfun(){
+						console.log("hello");
+					}
+					获取id元素对象
+					var s = document.getElementById("btn");
+					s.onclick = myfun
+					
+			 */
+			/* 以下是箭头定义方式 */
+			pass = () =>{
+				// 定义一个函数
+				myfun = () => console.log("测试成功");
+				// 获取id元素对象
+				document.getElementById("btn").onclick = myfun;
+			}
+			
+		</script>
+		
+		<script type="text/javascript">
+			
+			/* 最终代码 */
+			/* 
+				pass():一个使用的是第一种注册事件的方式
+				另一个使用的是第二种注册事件的方式
+			 */
+			pass = () =>{
+			document.getElementById("btn").onclick = () => console.log("测试成功");
+			}
+			
+			/* 
+				这两个都是使用第二种注册事件的方式。
+			 */
+			document.getElementById("mybody").onload = () => {
+				
+				document.getElementById("btn").onclick = () => console.log("测试成功");
+			}
+		</script>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+</html>

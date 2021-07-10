@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>两种都使用注册事件的第二种方式</title>
+	</head>
+	<body id="mybody">
+		<script type="text/javascript">
+		
+			/* onload事件 */
+			var mybodyElt = document.getElementById("mybody");
+			mybodyElt.onload = function(){
+				
+				/* onclick事件 */
+				var mybtnElt = document.getElementById("btn");
+				mybtnElt.onclick = function(){
+					console.log("两种都使用第二种注册方式测试成功");
+				}
+			}
+		</script>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+</html>
