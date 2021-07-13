@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单验证</title>
+		
+		<!-- 改变错误提示信息的样式 -->
+		<style type="text/css">
+			span {
+				font-size: 12px;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				要求：
+				(1) 用户名不能为空
+				(2) 用户名必须在6-14位之间
+				(3) 用户名只能有数字和字母组成，不能含有其他符号(正则表达式)
+				(4) 密码和确认密码一致
+				(5) 统一失去焦点验证
+				(6) 错误提示信息统一在span标签中提示，并且要求字体12号，红色。
+				(7) 文本框再次获取焦点后
+				(8) 最终表单中所有项均合法可提交。
+				
+			 */
+			window.onload = function(){
+				// 获取span标签对象，声明为全局，因为好几处要使用span对象
+				var nameErrorSpan = document.getElementById("nameError");
+				// 给 id = "username"的节点绑定blur（失去焦点）事件
+				var usernameElt = document .getElementById("username");
+				usernameElt.onblur = function(){
+					// 获取用户名
+					var username = usernameElt.value;
+					// 去除掉字符串的前后空白(即用户输入用户名的前后空白)
+					username = username.trim();
+					// 用户名不能为空，不能为空串。
+					// if(username.length == 0){},不这样写，太low
+					// 因为前边已经去除了前后空白，此时在为空，说明输入的就是空的用户名
+					if(username == ""){
+						//失去焦点的时候 输入的用户名为空在span中填写内容并显示在界面
+						nameErrorSpan.innerHTML = "用户名不能为空";
+					}else{
+						// 用户名不是空，继续判断长度是否合法
+						if(username.length < 6 || username.length > 14){
+							nameErrorSpan.innerHTML = "用户名长度必须在[6~14之间]";
+						}else{
+							// 用户名不为空，并且长度也合法，接着来继续判断用户名中是否有特殊的字符
+							var regExp = /^[a-zA-Z0-9]+$/;
+							var ok = regExp.test(username);
+							if(ok){
+								// 合法
+								nameErrorSpan.innerHTML = "";
+							}else{
+								// 不合法
+								nameErrorSpan.innerHTML = "用户名只能由数字和字母组成";
+							}
+						}
+					}
+				}
+				
+				// 获得焦点(onfocus)事件
+				usernameElt.onfocus = function(){
+					// 重新获取焦点后在span中填入空字符串，相当于清空内容，清空错误信息
+					nameErrorSpan.innerHTML = "";
+				}
+				
+				/* 将密码错误提示的 pwdError 写在外边，声明为全局变量，方便后期多处调用 */
+				var pwdErrorSpan = document.getElementById("pwdError");
+				/* 确认密码一失去焦点就开始验证 */
+				document.getElementById("confirmpwd").onblur = function(){
+					// 获取密码
+					var userpwd = document.getElementById("userpwd").value;
+					// 获取确认密码
+					var confirmpwd = document.getElementById("confirmpwd").value;
+					// 比较密码和确认密码是否一致
+					if(userpwd != confirmpwd){
+						pwdErrorSpan.innerHTML = "密码和确认密码不一致";
+					}else{
+						pwdErrorSpan.innerHTML = "";
+					}
+				}
+				
+				/* 确认密码 重新获取焦点清空 span 中的错误提示 */
+				document.getElementById("confirmpwd").onfocus = function(){
+					pwdErrorSpan.innerHTML = "";
+				}
+				
+				
+				/* 以下代码的作用是，将butten按钮绑定提交事件，并且判断填写的信息是否合法 */
+				/* 所有的信息必须合法才可以提交，触发提交事件，否则无法提交， */
+				/* 意思就是只有当表单中的所有span中的信息都为空的时候(没有错误信息提示)，才可以提交 */
+				document.getElementById("regbtn").onclick = function(){
+					
+					// 验证用户名是否合法，验证方式，让验证名失去焦点
+					// i先触发获取焦点事件，子啊文本框中填写信息，之后触发
+					// usernameElt.foucus() 失去焦点事件，此时会执行上边
+					// 编写的失去焦点事件，判断是否合法，不合法会有错误提示信息
+					// usernameElt 为全局变量，直接使用即可。
+					usernameElt.focus();   // 触发文本框的获取焦点事件(这里输入用户信息)
+					usernameElt.blur();    // 触发文本框的失去焦点事件(这里判断填写的信息是否合法)
+					
+					// 验证密码 验证方式：确认密码失去焦点 先触发获取焦点事件，
+					// 获取焦点事件后，在文本框填写好信息，之后使用 
+					// document.getElementById("confirmpwd").blur() 失去焦点
+					// 事件判断填写的信息是否合法。
+					// 这里的这个确认密码对象(confirmpwd)在上边声明的为局部变量，
+					// 不是全局变量，不能直接使用。
+					document.getElementById("confirmpwd").focus();
+					document.getElementById("confirmpwd").blur();  
+					
+					// 当所有的sapn都是空的表达表单合法
+					if(nameErrorSpan.innerHTML == "" && pwdErrorSpan.innerHTML == ""){
+						// 重点：使用JS代码触发提交事件
+						// 获取表单对象
+						var formObj = document.getElementById("userForm");
+						// 通过调用 submit() 方法来完成表单的提交
+						formObj.submit();
+					}
+				}
+				
+			}
+		</script>
+		
+		<form id="userForm" action="http://localhost:8080/oa/save">
+			
+			<!-- 这个后边不能加 div 因为div独占行，就不在文本框的后边提示了，所以用span，不独占行 -->
+			用户名<input type="text" name="username" id="username"/><span id="nameError"></span>
+			<br>
+			
+			密码<input type="password" name="userpwd" id="userpwd"/>
+			<br>
+			<!-- 确认密码是不要提交给服务器的，这个name不要写 -->
+			确认密码<input type="password" id="confirmpwd"/><span id="pwdError"></span>
+			<br>
+			
+			<!-- 表单所有项目都合法才能提交 -->
+			<!-- 如果使用submit按钮，不论以上输入的信息是否合法，都会提交 -->
+			<!-- <input type="submit" value="注册"/> -->
+			<!-- butten不能提交表单，但是JS代码可以提交表单 -->
+			<!-- butten按钮不能自己主动的提交表单，只能使用JS代码绑定这个按钮触发提交事件才可以使用butten提交 -->
+			<!-- 这样的话，就可以在JS代码中判断，只有当以上填写的信息都合法之后，才会触发提交事件 -->
+			<input type="button" value="注册" id="regbtn"/>
+		</form>
+	</body>
+</html>
