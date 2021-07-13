@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JSON对象做为JSON对象的属性值</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+	/* 
+			// JSON对象1 住址的 JSON对象
+			var addr = {
+				"city" : "北京",
+				"street" : "大兴"
+			};
+			
+			// JSON对象2 个人信息
+			var user = {
+				"username" : "zhangsan",
+				"password" : "123",
+				"email" : "zhangsan@123.com",
+				"address" : addr
+			};
+			 */
+			
+			/* 升级版，合并以上两段代码*/
+			var user = {
+				"username" : "zhangsan",
+				"password" : "123",
+				"email" : "zhangsan@123.com",
+				"address" : {"city" : "深圳","street" : "宝安"}
+			};
+			// zhangsan住在那个城市 怎么访问？
+			console.log(user.username + "居住在" + user.address.city);
+		</script>
+	</body>
+</html>

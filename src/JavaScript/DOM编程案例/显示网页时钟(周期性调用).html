@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>显示网页时钟（周期性调用）</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload = function(){
+				// 在这里将 window.setInterval("displayTime()",1000) 产生的这个
+				// 返回值声明为 全局变量，为了是方便暂停时候的使用。
+				var v ;
+				document.getElementById("displayTimeBtn").onclick = function(){
+					// 每隔 1 秒执行一次 displayTime()函数,输出当前是系统时间
+					// 返回值是一个取消周期性调用的value
+				v= window.setInterval("displayTime()",1000);
+				}
+				document.getElementById("stopBtn").onclick = function(){
+					// 停止周期性的调用
+					window.clearInterval(v);
+				}
+			}
+			function displayTime(){
+				// 获取系统当前时间，将时间显示到div中
+				var nowTime = new Date();
+				// innerHTML属性会将后面的字符串当做一段HTML代码解释并执行。
+				// 会将 nowTime.toDateString() 当做一段HTML代码执行，返回最终的结果，也就是当前时间。
+				// 并且会显示在 div 中。
+				document.getElementById("mydiv").innerHTML = nowTime.toLocaleString();
+			}
+			
+			/* 
+				对 window.setInterval(code,millises) 函数的理解
+				code:代表要执行的函数或者要执行的代码事
+				millises:代表周期性执行code的时间间隔，以毫秒计数
+				注意 ：window.setInterval(code,millises) 函数 有一个返回值，
+					  这个返回值可以传递给 window.clearInerval() 从而取消对
+					  code 的周期性执行的返回值。
+					  意思就是 ： 如果想停止这个周期性调用，使用 window.clearInerval(返回值)
+								 就可以停止周期性的调用。
+				function display(){
+					console.log("显示时间");
+				}
+				
+				// 设置每个JS执行一次display()函数
+				// 每个 1 秒会执行一次 display()函数，在控制台输出一次 显示时间
+				
+				window.setInterval("display()",1000);
+			 */
+		</script>
+		<input type="button" value="显示系统当前时间" id="displayTimeBtn"/>
+		<div id="mydiv"></div>
+		<input type="button" value="时间停止" id="stopBtn"/>
+	</body>
+</html>

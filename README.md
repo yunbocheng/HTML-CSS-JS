@@ -9,7 +9,6 @@
     <img src="https://img.shields.io/badge/JavaScript-动态页面-pink">
     <img src="https://img.shields.io/badge/Ajax-局部刷新-mediumslateblue">
     <img src="https://img.shields.io/badge/jQuery-简化开发-mediumslateblue">
-
   <img src="https://visitor-badge.glitch.me/badge?page_id=YunboCheng4379.HTML-CSS-JS-Ajax-jQuery" >
 <br>
 <br>
@@ -93,5 +92,4 @@ W3C在线文档 :
 >  1. 感谢动力节点提供的在线课程视频资料 [在线课程](https://www.bilibili.com/video/BV1gK411P7RQ)
 >  2. 感谢JetBrains提供的配套开发环境许可证 [官方网站](https://www.jetbrains.com/)
 >  3. 感谢Gitee提供的图床平台 [相关地址](https://gitee.com/YunboCheng/imageBad)
-
 

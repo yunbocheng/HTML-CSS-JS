@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>设计JSON格式的数据可以表示全班人数和每个学生的信息</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				设计JSON格式的数据可以表示全班人数和每个学生的信息
+			 */
+			var students = {
+				"total" : 3,
+				"data" : [{"name" : "zhangsan","age" : 18},
+						  {"name" : "lisi","age" : 19},
+						  {"name" : "wangwu","age" : 20}]
+			};
+		
+			// 牛逼的写法，JSON很容易解析，一顿”点“就行。
+			// 只取出第一个学生的姓名
+			console.log(students.data[0].name);  // zhangsan
+			// 访问以上的json对象，将总人数取出，将每个学生的信息取出
+			console.log("总人数： " + students.total);
+			
+			// 访问每一个学生数
+			var arr = students.data;
+			for(var i = 0;i<arr.length;i++){
+				var student = arr[i];
+				console.log("姓名：" + student.name + "," + "年龄：" + student.age);
+			}
+		</script>
+	</body>
+</html>

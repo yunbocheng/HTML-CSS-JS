@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JSON对象的创建和使用</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				在JavaScript中怎么定义JSON格式对象，怎么访问对象的属性？
+				语法格式：
+					var jsonObj = {
+						"属性名" : "属性值",
+						"属性名" : "属性值",
+						"属性名" : "属性值",
+						"属性名" : "属性值",
+						"属性名" : "属性值",
+						"属性名" : "属性值",
+						...
+					}
+					属性值可以是任意类型
+				注意：在JS中[]和()有什么区别？
+					[] 是数组对象
+					{} 是json对象	
+			 */
+			
+			/* JSON是一种无类型的对象，直接一个大括号包起来就是一个JSON对象了 */
+			var emp = {
+				"empno" : 7369,
+				"ename" : "smith",
+				"sal" : 800
+			}
+			
+			// 访问对象的属性第一种方式：
+			console.log(emp.empno);  // 7369
+			console.log(emp.ename);  // smith
+			console.log(emp.sal);  // 800
+			
+			// 访问对象的属性第二种方式：
+			console.log(emp["empno"]);
+			console.log(emp["ename"]);
+			console.log(emp["sal"]);
+			
+			var person = {
+				"name" : "zhangsan",
+				"sex" : false,
+				"aihao" : ["抽烟","喝酒","烫头"]
+			}
+			
+			console.log(person.name);
+			console.log(person.sex ? "男" : "女");
+			// 注意 此时 JSON对象中的 aihao 属性是一个数组
+			var aihaos = person.aihao;
+			for(var i = 0; i<aihaos.length;i++){
+				console.log(aihaos[i]);
+			}
+			
+		</script>
+	</body>
+</html>

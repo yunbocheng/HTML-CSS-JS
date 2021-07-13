@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Java传过来的是一个字符串怎么变成JSON对象(JSON用于交换数据)</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				1.java和javaScript两个语言怎么交换数据？
+					可以使用JSON格式的字符串
+					JSON就是一种轻量级的数据交换格式。
+					
+				2.java的JDBC连接数据库查询数据，然后将数据拼接成
+				  JSON格式的字符串，将JSON格式的字符串传递给javaScript
+				  然后在javaScript当中把json格式的字符串换成JSON对象，
+				  这样就可以从json对象中取数据了，这样就完成了数据的交换。  
+			 */
+			// 以下的格式是 : var fromJavaJSON = "{"name":"zhangsan","age":20}";
+			// 增加了转义字符，目的是与第一个双引号区分开，否则会匹配成这 "{",不会将前后双引号匹配。
+			// 双引号当中是一个普通的字符串，这个字符串是java给我们浏览器的。
+			// 这个不是json对象，就是一个在普通不过的字符串。
+			var fromJavaJSON = "{\"name\":\"zhangsan\",\"age\":20}";
+			
+			// 你需要将json格式的字符串转换成json对象
+			// eval()函数的作用：将后面的字符串当做一段JS代码姐解释并执行。
+			// 重点中的重点，这个可以将json格式的字符串转换成json对象。
+			window.eval("var stu = " + fromJavaJSON);
+			
+			/* 上面的代码执行结束，等同于这里创建了一个json对象 */
+			/* 
+				var stu = {
+					"name" : "zhangsan",
+					"age" : 20
+				};
+			 */
+			//转换成json对象的目的是为了取数据。（这样的javaScript和java之间两个不同的编程语言就完成了数据的交换。）
+			console.log("姓名：" + stu.name + ","+ "年龄：" + stu.age);
+			
+			
+		</script>
+	</body>
+</html>

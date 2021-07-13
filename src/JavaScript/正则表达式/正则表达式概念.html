@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>正则表达式概念</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				1. 什么是正则表达式：
+					正则表达式是一门独立的学科，基本每个语言都支持。
+					正则表达式不是JS专属的。不过在JS中使用居多。
+					通常使用正则表达式进行字符串格式匹配。
+					
+					正则表达式是由一堆特殊的符号组成的一个表达式。
+					每一个特殊的符号都有特殊的代表含义。
+					
+					例如：
+						qq号的正则表达式
+						邮箱地址的正则表达式、
+					
+					邮箱地址格式验证：
+						程序中有一个邮箱地址的正则表达式
+						用户输入一个邮箱地址
+						那么邮箱地址的正则表达式和邮箱地址进行匹配，
+						能匹配成功，表达式合法，反之不合法。
+						
+					2. 对于javaScript程序员来说，掌握的程度：
+						1. 能够看懂正则表达式
+						2. 简单的正则表达式要会写
+						3. 要能够独立的从网络当中搜索到你想要的正则表达式(搜索能力要有)
+						4. 要会创建JS的正则表达式对象
+						5. 要会调用JS正则表达式对象的方法
+					
+					3. 常见的正则表达式符号（看文档）
+					
+					4. 在JS中怎么创建正则表达式对象？
+						包括两种：
+						
+							第一种方式：直接亮语法
+								var regExp = /正则表达式/标记
+								
+							第二种方式：使用内置类RegExp类
+								var regExp = new RegExp("正则表达式","标记")
+								
+					标记是可选项！！！！！！！！都有哪些值可选？
+						g: 全局 global
+						i: 忽略大小写 ignorecase
+						gi: 全局扫描，并且忽略大小写。
+					
+					5. 正则表达式对象有一个很重要的方法：
+						// 创建一个正则表达式对象，后边的 g 或者 i 或者 gi 可加可不加
+						var emailRegExp = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/g
+						var ok = emailRegExp.txet("用户输入的字符串");
+						返回值是布尔类型的数据
+						返回值ok是true表示，匹配成功
+						
+					6. 其实在JS种，字符串String也是支持正则表达式的
+						
+			 */
+			// 字符串对象使用正则表达式
+			// 使用普通的替换字符方式只能替换第一个
+			console.log("1998-10-11".replace("-","/"));  // 1998/10-11
+			// 使用正则表达式进行替换符号 ”-“ ，而使用正则表达式可以替换全部
+			// /-/g 是一个正则表达式对象,将所有的 - 替换为 /
+			console.log("1998-10-11".replace(/-/g,"/")); // 1998/10/11
+			
+			function checkEmail(){
+				
+				// 获取用户输入的信息，即text的value属性，也就是邮箱地址
+				var emailElt = document.getElementById("email").value;
+				// 创建正则表达式对象
+				var regExp = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+				// 验证
+				var ok = regExp.test(emailElt);
+				if(ok){
+					alert("邮箱地址合法");
+				}else{
+					alert("邮箱地址不合法");
+				}
+			}
+		</script>
+		邮箱地址: <input type="text" id="email" />
+		
+		<input type="button" value="验证邮箱地址" onclick="checkEmail()"/>
+	</body>
+</html>

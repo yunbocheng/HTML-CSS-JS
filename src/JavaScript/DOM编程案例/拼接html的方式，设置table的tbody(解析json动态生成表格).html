@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			拼接html的方式，设置table的tbody（重点以后开发都用这个）
+			解析json动态生成表格。
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 从java过来一个json格式的字符串*/
+			var fromJava = "{\"total\" : 2 , \"students\" : [{\"name\" : \"张三\",\"age\" :18},{\"name\" : \"李四\",\"age\" : 20},{\"name\" : \"王五\" , \"age\" : 22}]}";
+			window.onload = function(){
+				// 给butten绑定单击事件，用于执行查看学生信息操作
+				document.getElementById("displaybtn").onclick = function(){
+					// 解析上面的json格式的字符串，将解析出来的数据放到tbody中。
+					// 转化 json对象
+					window.eval(" var json = " + fromJava);  // json就是这个JSON对象
+					// 设置记录的条数
+					document.getElementById("myspan").innerHTML = json.total;
+					// 拼接HTML，取出每个学生的信息
+					var studentArray = json.students;
+					var html = "";
+					for(var i = 0; i<studentArray.length; i++){
+						var s = studentArray[i];
+						html += "<tr>";
+						html += "<td>"+(i+1)+"</td>";
+						html += "<td>"+s.name+"</td>";
+						html += "<td>"+s.age+"</td>";
+						html += "</tr>";
+					}
+					// 将以上拼接的HTML设置到tbody中
+					document.getElementById("stubody").innerHTML = html;
+				}
+			}
+		</script>
+		
+		<!-- 设置一个按钮，用于点击查看学生的信息。 -->
+		<input type="button" value="查看学生信息列表" id="displaybtn" />
+		
+		<table border="1px" width="40%">
+			<tr>
+				<th>序号</th>
+				<th>学生姓名</th>
+				<th>学生年龄</th>
+			</tr>
+			<tbody id="stubody">
+			<!-- 	<tr>
+					<td>1</td>
+					<td>张三</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>李四	</td>
+					<td>22</td>
+				</tr> -->
+			</tbody>
+		</table>
+		总记录条数：<span id="myspan">0</span>
+	</body>
+</html>

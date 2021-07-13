@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>eval函数</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			// eval函数可以将一个字符串当做一段JS代码解释执行
+			window.eval("var i = 100");
+			console.log(i);  // 100
+			
+			// 可以改变 i的数值
+			i = 10011;
+			console.log(i);
+		</script>
+	</body>
+</html>

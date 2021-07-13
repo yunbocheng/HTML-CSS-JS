@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>窗口的开启与关闭</title>
+	</head>
+	<body>
+		<!-- 开启一个窗口，默认是开启一个新窗口 -->
+		<input type="button" value="开启百度(默认窗口)" onclick="window.open('https://www.baidu.com')"/>
+		
+		<!-- 开启一个窗口，在当前窗口显示 -->
+		<input type="button" value="开启百度(当前窗口)" onclick="window.open('https://www.baidu.com','_self')"/>
+		<!-- 开启一个窗口，在新窗口显示 -->
+		<input type="button" value="开启百度(新窗口)" onclick="window.open('https://www.baidu.com','_blank')"/>
+		<!-- 开启一个窗口，在父窗口显示 -->
+		<input type="button" value="开启百度(父窗口)" onclick="window.open('https://www.baidu.com','_parent')"/>
+		<!-- 开启一个窗口，在顶级窗口显示 -->
+		<input type="button" value="开启百度(顶级窗口)" onclick="window.open('https://www.baidu.com','_top')"/>
+		
+		<!-- 开启本地的文件或者是连接 -->
+		<input type="button" value="打开关闭的测试窗口" onclick="window.open('关闭窗口.html')"/>
+		
+		<!-- 关闭当前窗口 -->
+		<input type="button" value="关闭当前窗口" onclick="window.close()" />
+	</body>
+</html>
