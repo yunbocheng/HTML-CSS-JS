@@ -61,8 +61,16 @@
 -	[3-JS中的数据类型](./src/JavaScript/数据类型)
 -	[4-JS函数以及变量](./src/JavaScript/JS函数以及变量)
 -	[5-JS事件](./src/JavaScript/JS事件)
--	[5-JS笔记](./src/JavaScript/js介绍.md)
-
+-	[6-JS控制语句](./src/JavaScript/JS控制语句)
+-	[7-JSJS运算符值void](./src/JavaScript/JS运算符值void)
+-	[8-JS内置对象(Array和Date)](./src/JavaScript/JS内置对象(Array和Date))
+-	[9-JS类的定义](./src/JavaScript/类的定义)
+-	[10-BOM和DOM的区别与联系](./src/JavaScript/BOM和DOM的区别与联系)
+-	[11-BOM编程案例](./src/JavaScript/BOM编程案例)
+-	[12-DOM编程案例](./src/JavaScript/DOM编程案例)
+-	[13-JSON](./src/JavaScript/JSON)
+-	[14-表单验证](./src/JavaScript/表单验证)
+-	[15-重点：JS中获取元素的三种方式](./src/JavaScript/重点：JS中获取元素的三种方式)
 
 ## 四、参考文献
 
