@@ -2,7 +2,6 @@
 <center>
 <img src="https://gitee.com/YunboCheng/imageBad/raw/master/image/template.png" >
 </center>
-<br>
 <div align="center">
     <img src="https://img.shields.io/badge/HTML-知识体系-mediumslateblue">
     <img src="https://img.shields.io/badge/CSS-页面渲染-mediumslateblue">
