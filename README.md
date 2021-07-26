@@ -61,7 +61,7 @@
 -	[4-JS函数以及变量](./src/JavaScript/JS函数以及变量)
 -	[5-JS事件](./src/JavaScript/JS事件)
 -	[6-JS控制语句](./src/JavaScript/JS控制语句)
--	[7-JSJS运算符值void](./src/JavaScript/JS运算符值void)
+-	[7-JS运算符值void](./src/JavaScript/JS运算符值void)
 -	[8-JS内置对象(Array和Date)](./src/JavaScript/JS内置对象(Array和Date))
 -	[9-JS类的定义](./src/JavaScript/类的定义)
 -	[10-BOM和DOM的区别与联系](./src/JavaScript/BOM和DOM的区别与联系)
