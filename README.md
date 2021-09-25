@@ -19,7 +19,7 @@
 
 ## 一、Web知识架构
 
-![JVM架构体系](https://gitee.com/YunboCheng/imageBad/raw/master/image/20210705174607.png)
+![Web架构体系](https://gitee.com/YunboCheng/imageBad/raw/master/image/20210705174607.png)
 
 ## 二、项目结构的思维导图
 
