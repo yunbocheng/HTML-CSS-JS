@@ -1,19 +1,20 @@
 
 ## 1. 当前的系统结构有哪些？
 
-<!DOCTYPE html>是html5标准网页声明,全称为Document Type HyperText Mark-up Language，
+`<!DOCTYPE html>`是html5标准网页声明,全称为Document Type HyperText Mark-up Language，
 意思为文档种类为超文本标记性语言或超文本链接标示语言，现在是这个简洁形式，
 支持html5标准的主流浏览器都认识这个声明。
-<html lang="en">
+`<html lang="en">`
 
 向搜索引擎表示该页面是html语言，并且语言为英文网站，其"lang"的意思就是“language”，
 语言的意思，而“en”即表示english。
 你的页面如果是中文页面，可将其改为
-<html lang="zh">
+`<html lang="zh">`
 
+```
 <meta charset="utf-8"> 
 <!--html标签中的meta charset="utf-8" 的作用首先来说明一下“utf-8”是一种字符编码。-->
-
+```
 在html中可以省略头部标签，只写身体
 
 存在两种结构 ：
@@ -77,9 +78,10 @@ Hyper Text Markup Language ：超文本标记语言。
 标记语言 ：标记语言一般都是由一对一对的标签组成。
 
 成对出现 ：
-> <html></html>
 
-以上就是HTML的跟标签。
+`<html> </html>`
+
+以上就是HTML的根标签。
 
 HTML中大部分的标签都是由开始标签和结束标签组成的，都是成对出现的。
 
@@ -185,7 +187,7 @@ W3C组织是对网络标准制定的一个非盈利组织，W3C是World Wide Web
 
 tim berners-lee 万维网联盟创始人（万维网之父）。
 
-以为有了他才有了现如今的互联网时代，他让我们可以上网了。
+因为有了他才有了现如今的互联网时代，他让我们可以上网了。
 
 HTTP协议：超文本传输协议，也是w3c制定的。
 

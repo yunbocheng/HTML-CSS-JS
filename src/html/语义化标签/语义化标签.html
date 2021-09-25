@@ -1,0 +1,46 @@
+<!--
+  ~ Copyright (c) 2021/9/24 下午4:02 @程云博 <2484720940@qq.com> All Rights Reserved
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>语义化标签</title>
+</head>
+<body>
+    <!--
+        <h></h>属于块级元素
+        <p></p>
+        在页面中只要独占一行的元素都叫块级元素（block element）
+
+        在页面中不会独占一行的称为行内元素（inline element）
+
+        <hgroup></hgroup> 标签用来为标签分组，可以将一组相关的标题放到一个hgroup中。
+        注意：是一组相关的标签
+    -->
+    <hgroup>
+        <h1>水果</h1>
+        <h2>葡萄</h2>
+    </hgroup>
+
+    <!--
+        <blockquote> 代表的长引用，这个时候在页面显示的话会首行缩进。
+        <blockquote> 也是独占一行，属于块级元素。
+    -->
+    程云博说：
+    <blockquote>
+        朝圣的路上我们坚持自己的道！
+    </blockquote>
+
+    <!--
+        <q></q> 代表短引用，这个时候不会独占一行，在文内进行引用。
+        <q> 是行内元素，不会独占一行。
+
+        即使这里换行了，但是只不过是在冒号后面多加了一个空格，因为在HTML编码中，
+        多个空格会被看做一个空格。
+    -->
+    孔子说：
+    <q>学而不思则罔，思而不学则殆。</q>
+</body>
+</html>
